@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Space of James</title>
+
+    {% load staticfiles %}
+    <link rel="shortcut icon" href="{% static 'weblog/favicon.ico' %}" />
+    <link rel="bookmark" href="{% static 'weblog/favicon.ico' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'weblog/css/main.css' %}" />
+    <script type="text/javascript" src="{% static 'weblog/js/jquery-1.12.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'weblog/js/photos.js' %}"></script>
+</head>
+<body>
+    <div class="width100 bg">
+        <div class="ht100 center">
+            <img src="{% static 'weblog/img/photos.png' %}">
+            <!--
+            <audio autoplay="autoplay" id="bg_music">
+                <source src="/static/weblog/music/2.mp3" type="audio/mpeg">
+            </audio>
+            <script type="text/javascript">
+               //this script is to change the song to play randomly...
+                 function randomMusic(){
+                    var audio = document.getElementById('bg_music');
+                    audio.src = "/static/weblog/music/"+parseInt(Math.random()*3+1,10)+".mp3";
+                    audio.play();
+                    audio.addEventListener('ended', function (){
+                      randomMusic();
+                    })
+                  }
+                  randomMusic();
+               </script>
+               -->
+        </div>
+        <div class="ht400 relative OH" id="wamp">
+            <div class="absolute height100 width1000" id="inner">
+                <div class="wt200 height100 FL center" id = "pic">
+                    <img class="height100" src="{% static 'weblog/img/psb.png' %}">
+                </div>
+                <div class="wt200 height100 FL center">
+                    <img class="height100" src="{% static 'weblog/img/psb.png' %}">
+                </div>
+                <div class="wt200 height100 FL center">
+                    <img class="height100" src="{% static 'weblog/img/psb.png' %}">
+                </div>
+                <div class="wt200 height100 FL center">
+                    <img class="height100" src="{% static 'weblog/img/psb.png' %}">
+                </div>
+                <div class="wt200 height100 FL center">
+                    <img class="height100" src="{% static 'weblog/img/psb.png' %}">
+                </div>
+                <div class="wt200 height100 FL center">
+                    <img class="height100" src="{% static 'weblog/img/psb.png' %}">
+                </div>
+                <div class="wt200 height100 FL center">
+                    <img class="height100" src="{% static 'weblog/img/psb.png' %}">
+                </div>
+                <div class="wt200 height100 FL center">
+                    <img class="height100" src="{% static 'weblog/img/psb.png' %}">
+                </div>
+            </div>
+            <script type="text/javascript">
+                var obj1  = new turnShow("inner","pic");
+                function fun1(){
+                    obj1.forward();
+                    if(obj1.index>=obj1.list.length){
+                        obj1.time = setInterval(fun2,2000);
+                    }
+                }
+                function fun2(){
+                    obj1.backward();
+                    if(obj1.index<=0){
+                        obj1.time = setInterval(fun1,2000);
+                    }
+                }
+                obj1.time = setInterval(fun1,2000);
+                wamp.onmouseover = function(){
+                    clearInterval(obj1.time);
+                }
+                wamp.onmouseout = function(){
+                    obj1.time = setInterval(fun1,2000);
+                }
+            </script>
+        </div>
+        <div class="ht800 pt30 OH relative"  >
+            <div class="height100 width1000 absolute" id = "bigPic">
+                <div id="pic2"><img  src="{% static 'weblog/img/long1.jpg' %}"></div>
+                <div><img  src="{% static 'weblog/img/zang1.jpg' %}"></div>
+                <div><img  src="{% static 'weblog/img/chongqing1.jpg' %}"></div>
+                <div><img  src="{% static 'weblog/img/zang2.jpg' %}"></div>
+                <div><img  src="{% static 'weblog/img/chongqing2.jpg' %}"></div>
+                <div><img  src="{% static 'weblog/img/chongqing3.jpg' %}"></div>
+                <div><img  src="{% static 'weblog/img/chongqing4.jpg' %}"></div>
+            </div>
+            <script type="text/javascript">
+                var obj2 = new turnShow("bigPic","pic2");
+                obj2.maxT = 80;
+                function left(){
+                    obj2.forward();
+                    if (obj2.index>=obj2.list.length-1) {
+                        obj2.index = 0;
+                    }
+                }
+                function right(){
+                    if(obj2.index<=0){
+                        obj2.index = obj2.list.length-1;
+                    }
+                    obj2.backward();
+                }
+                 var time = setInterval(left,6000);
+            </script>
+
+            <div id="left" class=" width20 height20">
+                <a href="javascript:void(0);" onclick="left();" ><img id = "img_l" src="{% static 'weblog/img/button.png' %}"></a>
+            </div>
+            <div id="right" class=" width20 height20">
+                <a href="javascript:void(0);" onclick="right();"><img id = "img_r" src="{% static 'weblog/img/button.png' %}"></a>
+            </div>
+            <script type="text/javascript">
+               var shine1 = new shine("img_l");
+               var shine2 = new shine("img_r");
+               shine1.start();
+               shine2.start();
+            </script>
+        </div>
+        <div class="ht800 pt20 relative" id ="rotate">
+            <div class="ht200  wt150 FL absolute"></div>
+            <div class="ht200 pink wt150 FL absolute"><img src="{% static 'weblog/img/fish1.jpg' %}"></div>
+            <div class="ht200  wt150 FL absolute"></div>
+            <div class="ht200  wt150 FL absolute"></div>
+            <div class="ht200 pink wt150 FL absolute"><img src="{% static 'weblog/img/fish2.jpg' %}"></div>
+            <div class="ht200  wt150 FL absolute"></div>
+            <div class="ht200  wt150 FL absolute"></div>
+            <div class="ht200 blue wt150 FL absolute"><img src="{% static 'weblog/img/fish3.jpg' %}"></div>
+            <div class="ht200  wt150 FL absolute"></div>
+            <div class="ht200 wt150 FL absolute"></div>
+            <div class="ht200 blue wt150 FL absolute"><img src="{% static 'weblog/img/fish4.jpg' %}"></div>
+            <div class="ht200  wt150 FL absolute"></div>
+            <div class="ht200  wt150 FL absolute"></div>
+            <div class="ht200 green wt150 FL absolute"><img src="{% static 'weblog/img/fish5.jpg' %}"></div>
+            <div class="ht200  wt150 FL absolute"></div>
+            <div class="ht200  wt150 FL absolute"></div>
+            <div class="ht200 green wt150 FL absolute"><img src="{% static 'weblog/img/fish6.jpg' %}"></div>
+            <div class="ht200  wt150 FL absolute"></div>
+            <div class="ht200 pink wt150 FL absolute"><img src="{% static 'weblog/img/fish7.jpg' %}"></div>
+            <div class="ht200  wt150 FL absolute"></div>
+            
+        </div>
+        <script type="text/javascript">
+            var rotate = document.getElementById('rotate');
+            var piclist = rotate.getElementsByTagName('div');
+            var imgArray = new Array();
+            function change(){
+                for(var i = 0;i<piclist.length;i++){
+                    imgArray[i] = new img(i);
+                }
+            }
+            change();
+            var imgArray2 = new Array();
+            var imgArray2=[].concat(imgArray);
+            //console.log(imgArray2)
+            change();
+            console.log(imgArray);
+            function animat(){
+                for(var i=0;i<piclist.length;i++){
+                    animation(imgArray2[i],imgArray[i],piclist[i]);
+                }
+                imgArray2 = [].concat(imgArray);
+                change();
+            }
+            animat();
+            var rotatetime = setInterval(animat,5000);
+            
+        </script>
+    </div>
+</body>
+</html>
